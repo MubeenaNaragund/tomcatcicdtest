@@ -1,7 +1,6 @@
 def templatePath = 'tomcat.yaml'
         // name of the template that will be created
 def templateName = 'tomcat.yaml'
-
 pipeline {
 
   agent any
@@ -12,12 +11,12 @@ pipeline {
       steps {
         git url:'https://github.com/MubeenaNaragund/tomcatcicdtest.git', branch:'main'
       }
-    }
-    stages {
-                stage('preamble') {
-                    steps {
-                        script {
-                            openshift.withCluster() {
+    
+    
+    stage('preamble') {
+      steps {
+        script {
+                 		openshift.withCluster() {
                                 openshift.withProject() {
                                     echo "Using project: ${openshift.project()}"
                                 }
@@ -25,7 +24,7 @@ pipeline {
                         }
                     }
                 }
-				        stage('create') {
+		stage('create') {
                     steps {
                         script {
                             openshift.withCluster() {
@@ -51,7 +50,7 @@ pipeline {
                         } // script
                     } // steps
                 } // stage
-				        stage('tag') {
+		stage('tag') {
                     steps {
                         script {
                             openshift.withCluster() {
