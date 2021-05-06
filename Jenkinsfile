@@ -66,3 +66,4 @@ pipeline {
     } // stages
   } // pipeline
   type: JenkinsPipeline
+}
