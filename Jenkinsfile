@@ -29,7 +29,7 @@ pipeline {
           openshift.withCluster() {
             openshift.withProject() {
               // delete everything with this template label
-              openshift.selector("all", [deployment: name]).delete()
+              openshift.selector("all", [deployment: templateName]).delete()
               // delete any secrets with this template label
               if (openshift.selector("secrets", templateName).exists()) {
                 openshift.selector("secrets", templateName).delete()
