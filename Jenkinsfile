@@ -35,20 +35,20 @@ pipeline {
           } // script
         } // steps
       } // stage
-      stage('build') {
-        steps {
-          script {
-            openshift.withCluster() {
-              openshift.withProject() {
-                def builds = openshift.selector("deployment", templateName).related('builds')
-                builds.untilEach(1) {
-                  return (it.object().status.phase == "Complete")
-                }
-              }
-            }
-          } // script
-        } // steps
-      } // stage
+//      stage('build') {
+//        steps {
+//          script {
+//            openshift.withCluster() {
+//              openshift.withProject() {
+//                def builds = openshift.selector("deployment", templateName).related('builds')
+//                builds.untilEach(1) {
+//                  return (it.object().status.phase == "Complete")
+//                }
+//              }
+//            }
+//          } // script
+//        } // steps
+//      } // stage
       stage('tag') {
         steps {
           script {
