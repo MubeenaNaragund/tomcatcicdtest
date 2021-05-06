@@ -1,6 +1,6 @@
-def templatePath = 'tomcat.yaml'
+def templatePath = 'https://github.com/MubeenaNaragund/tomcatcicdtest/blob/main/tomcat.yaml'
 // name of the template that will be created
-def templateName = 'tomcat.yaml'
+def templateName = 'https://github.com/MubeenaNaragund/tomcatcicdtest/blob/main/tomcat.yaml'
 pipeline {
 
   agent any
