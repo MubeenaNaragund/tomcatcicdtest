@@ -67,4 +67,4 @@ pipeline {
                 } // stage
             } // stages
         } // pipeline
-      type: JenkinsPipeline
+type: JenkinsPipeline
