@@ -11,7 +11,7 @@ pipeline {
       steps {
         git url: 'https://github.com/MubeenaNaragund/tomcatcicdtest.git', branch: 'main'
       }
-
+    }
       stage('preamble') {
         steps {
           script {
@@ -66,4 +66,3 @@ pipeline {
     } // stages
   } // pipeline
   type: JenkinsPipeline
-}
