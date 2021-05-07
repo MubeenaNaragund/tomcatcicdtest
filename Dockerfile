@@ -1,3 +1,4 @@
+USER Jenkins
 FROM amd64/tomcat:9.0.22-jdk11-adoptopenjdk-openj9
 RUN chmod a+w /usr/local/tomcat/bin/
 RUN echo $JAVA_HOME
