@@ -1,6 +1,7 @@
 def templatePath = 'tomcat'
 // name of the template that will be created
 def templateName = 'tomcat'
+def dockerfile= 'Dockerfile'
 pipeline {
 
   agent any
@@ -44,7 +45,7 @@ pipeline {
         script {
           openshift.withCluster() {
             openshift.withProject() {
-              openshift.build(Dockerfile)
+              openshift.build(dockerfile)
             }
           }
         }
