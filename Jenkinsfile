@@ -45,7 +45,7 @@ pipeline {
         script {
           openshift.withCluster() {
             openshift.withProject() {
-              openshift.build(dockerfile)
+              docker.build(dockerfile)
             }
           }
         }
