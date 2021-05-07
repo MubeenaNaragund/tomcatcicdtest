@@ -39,6 +39,17 @@ pipeline {
         } // script
       } // steps
     } // stage
+    stage('build image') {
+      steps {
+        script {
+          openshift.withCluster() {
+            openshift.withProject() {
+              openshift.build(Dockerfile)
+            }
+          }
+        }
+      }
+    }
     stage('create') {
       steps {
         script {
