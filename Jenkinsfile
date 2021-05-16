@@ -11,7 +11,7 @@ pipeline {
     stage('Checkout Source') {
       steps {
         git url: 'https://github.com/MubeenaNaragund/tomcatcicdtest.git', branch: 'main'
-        touch 'Mubeena'
+        
       }
     }
     stage('preamble') {
@@ -20,6 +20,7 @@ pipeline {
           openshift.withCluster() {
             openshift.withProject() {
               echo "Using project: ${openshift.project()}"
+                touch 'Mubeena'
             }
           }
         }
