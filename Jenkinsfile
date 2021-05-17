@@ -10,12 +10,10 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        script {
-          ssh 'root@9.30.14.66, credentialsId : 'OpenshiftClusterCreds''
-        }
+        
         git url: 'https://github.com/MubeenaNaragund/tomcatcicdtest.git', branch: 'main'
         
-      }
+      
     }
     stage('preamble') {
       steps {
