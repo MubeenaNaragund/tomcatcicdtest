@@ -4,7 +4,7 @@ def templateName = 'tomcat'
 def dockerfile= 'Dockerfile'
 pipeline {
 
-  agent dockerfile
+  agent {label 'dockerfile' }
   
   stages {
 
