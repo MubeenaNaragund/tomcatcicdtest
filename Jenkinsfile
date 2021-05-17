@@ -4,7 +4,7 @@ def templateName = 'tomcat'
 def dockerfile= 'Dockerfile'
 pipeline {
 
-  agent any
+  agent '9.30.14.66'
   
   stages {
 
@@ -13,7 +13,7 @@ pipeline {
         
         git url: 'https://github.com/MubeenaNaragund/tomcatcicdtest.git', branch: 'main'
         
-      
+      }
     }
     stage('preamble') {
       steps {
