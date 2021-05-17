@@ -50,8 +50,8 @@ pipeline {
             openshift.withProject() {
               //openshift.build(dockerfile)
                //openshift.withRegistry('default-route-openshift-image-registry.apps.itmveocp.cp.fyre.ibm.com')
-                 myapp = openshift.build("default-route-openshift-image-registry.apps.itmveocp.cp.fyre.ibm.com/default/tomcat:latest")
-                 myapp.push("latest")
+                 openshift.build("default-route-openshift-image-registry.apps.itmveocp.cp.fyre.ibm.com/default/tomcat:latest")
+                 openshift.push("default-route-openshift-image-registry.apps.itmveocp.cp.fyre.ibm.com/default/tomcat:latest")
             }
           }
         }
